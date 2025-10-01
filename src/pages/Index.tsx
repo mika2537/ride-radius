@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { MapPin, Users, Clock, DollarSign, Car, Search } from "lucide-react";
 import { RouteCard } from "@/components/RouteCard";
 import { SearchBar } from "@/components/SearchBar";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const mockRoutes = [
@@ -56,10 +57,12 @@ const Index = () => {
               Connect with drivers already going your way. Pre-set routes mean better planning and lower costs.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Button size="lg" variant="secondary" className="gap-2">
-                <Car className="h-5 w-5" />
-                I'm a Driver
-              </Button>
+              <Link to="/driver/dashboard">
+                <Button size="lg" variant="secondary" className="gap-2 w-full sm:w-auto">
+                  <Car className="h-5 w-5" />
+                  I'm a Driver
+                </Button>
+              </Link>
               <Button size="lg" variant="outline" className="gap-2 bg-background/10 border-primary-foreground/20 hover:bg-background/20 text-primary-foreground">
                 <Search className="h-5 w-5" />
                 Find a Ride
